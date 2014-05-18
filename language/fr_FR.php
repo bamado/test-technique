@@ -10,6 +10,8 @@ return array(
     '__user_firstname'  =>  'Prénom',
     '__user_lastname'   =>  'Nom',
     '__user_email'  =>  'Adresse email',
+    '__user_address'  =>  'Adresse postale',
+    '__user_birthday'  =>  'Date de naissance',
 
     //Form User
 
@@ -17,6 +19,8 @@ return array(
     '__label_user_lastname'     =>  'Nom',
     '__label_user_email'        =>  'Email',
     '__label_user_password'     =>  'Password',
+    '__label_user_address'       =>  'Adresse',
+    '__label_user_birthday'     =>  'Date de naissance',
     '__save'                    =>  'Enregistrer',
 
     //Form messages

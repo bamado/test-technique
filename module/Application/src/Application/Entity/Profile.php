@@ -3,6 +3,7 @@ namespace Application\Entity;
 use Application\Entity\EntityAbstract;
 
 use Doctrine\ORM\Mapping as ORM;
+use Zend\XmlRpc\Value\DateTime;
 
 /**
  * @ORM\Entity(repositoryClass="Application\Mapper\Profile")
@@ -57,6 +58,15 @@ class Profile extends EntityAbstract
      * @var string
      */
     protected $address;
+
+    /**
+     * Birthday
+     *
+     * @ORM\Column(type="date", nullable=true)
+     *
+     * @var date
+     */
+    protected $birthday;
 
     /**
      * @var datetime $created
@@ -155,6 +165,29 @@ class Profile extends EntityAbstract
     public function getAddress()
     {
         return $this->address;
+    }
+
+    /**
+     * Set birthday
+     *
+     * @param string $birthday
+     * @return Profile
+     */
+    public function setBirthday($birthday)
+    {
+        $this->birthday = new \DateTime($birthday);
+
+        return $this;
+    }
+
+    /**
+     * Get birthday
+     *
+     * @return date
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
     }
 
     /**
