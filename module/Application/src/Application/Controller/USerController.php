@@ -16,13 +16,24 @@ class UserController extends AbstractActionController
 {
     public function listAction()
     {
+        $column = $this->params()->fromRoute('column') ? $this->params()->fromRoute('column') : "u.id";
+        $order =  $this->params()->fromRoute('order') ? $this->params()->fromRoute('order') : 'DESC';
 
         $users = $this->getServiceLocator()->get('entity_manager')
-            ->getRepository('Application\Entity\User')
-            ->findAll();
+            ->createQueryBuilder()
+            ->select('u', 'p')
+            ->from('Application\Entity\User', 'u')
+            ->leftJoin('u.profile', 'p')
+            ->orderBy($column, $order)
+            ->getQuery()
+            ->getResult();
+
+        $order = ($order == 'ASC') ? 'DESC' : 'ASC';
 
         return new ViewModel(array(
-            'users' =>  $users
+            'users' =>  $users,
+            'column' =>  $column,
+            'order' =>  $order,
         ));
     }
 

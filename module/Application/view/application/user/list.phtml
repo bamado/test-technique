@@ -9,19 +9,22 @@
     <thead>
         <tr>
             <th>
-                <?=$this->translate('__user_id')?>
+                <a href="<?php echo $this->url('users/list');?>/u.id/<?php echo $order;?>"><?=$this->translate('__user_id')?></a>
             </th>
             <th>
-                <?=$this->translate('__user_firstname')?>
+                <a href="<?php echo $this->url('users/list');?>/p.firstName/<?php echo $order;?>"><?=$this->translate('__user_firstname')?></a>
             </th>
             <th>
-                <?=$this->translate('__user_lastname')?>
+                <a href="<?php echo $this->url('users/list');?>/p.lastName/<?php echo $order;?>"><?=$this->translate('__user_lastname')?></a>
             </th>
             <th>
-                <?=$this->translate('__user_email')?>
+                <a href="<?php echo $this->url('users/list');?>/u.email/<?php echo $order;?>"><?=$this->translate('__user_email')?></a>
             </th>
             <th>
-                <?=$this->translate('__user_address')?>
+                <a href="<?php echo $this->url('users/list');?>/p.address/<?php echo $order;?>"><?=$this->translate('__user_address')?></a>
+            </th>
+            <th>
+                <a href="<?php echo $this->url('users/list');?>/p.birthday/<?php echo $order;?>"><?=$this->translate('__user_birthday')?></a>
             </th>
             <th></th>
         </tr>
@@ -34,7 +37,6 @@
         ?>
         <tr>
         <td>
-            <?php echo gettype($user);?>
             <?=$user['id']?>
         </td>
         <td>

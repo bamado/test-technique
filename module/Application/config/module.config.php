@@ -63,6 +63,15 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
+                    'list' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/list[/:column][/:order]',
+                            'defaults' => array(
+                                'action'    =>  'list'
+                            ),
+                        ),
+                    ),
                     'add' => array(
                         'type'    => 'Literal',
                         'options' => array(
